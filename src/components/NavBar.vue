@@ -1,10 +1,14 @@
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router';
+</script>
+
 <template>
   <div class="navbar">
-    <a href="/">Home</a>
-    <a href="/ihazdadjokes">Dad Jokes</a>
-    <a href="/foaas">F-Off</a>
-    <a href="/geek-jks">Geek</a>
-    <a href="/favourites">Favourites</a>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/ihazdadjokes">Dad Jokes</RouterLink>
+    <RouterLink to="/foaas">F-Off</RouterLink>
+    <RouterLink to="/geek-jks">Geek</RouterLink>
+    <RouterLink to="/favourites">Favourites</RouterLink>
   </div>
 </template>
 
