@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router';
 <template>
   <div class="navbar">
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/ihazdadjokes">Dad Jokes</RouterLink>
+    <RouterLink to="/dad-jks">Dad Jokes</RouterLink>
     <RouterLink to="/foaas">F-Off</RouterLink>
     <RouterLink to="/geek-jks">Geek</RouterLink>
     <RouterLink to="/favourites">Favourites</RouterLink>
