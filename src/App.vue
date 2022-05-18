@@ -11,6 +11,12 @@ import NavBar from './components/NavBar.vue';
 </template>
 
 <style>
+@import 'assets/base.css';
+
+::selection {
+  background-color: var(--selection);
+}
+
 * {
   transition: color 250ms ease-out, background-color 250ms ease-out;
 }
@@ -20,7 +26,7 @@ body {
   margin: 0;
   min-height: 100vh;
   max-width: 100vw;
-  background-color: gold;
+  background-color: var(--secondary);
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -34,6 +40,15 @@ main {
   padding: 2rem;
   min-height: calc(100vh - 7rem);
   background-color: white;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 p {
