@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import HomeView from "@/views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,31 +15,22 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import("../views/ExampleView.vue"),
+      component: () => import("@/views/DadJokeView.vue"),
     },
     {
       path: "/foaas",
       name: "F-Off",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/ExampleView.vue"),
+      component: () => import("@/views/ExampleView.vue"),
     },
     {
       path: "/geek-jks",
       name: "Geek Jokes",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/GeekJokeView.vue"),
+      component: () => import("@/views/GeekJokeView.vue"),
     },
     {
       path: "/favourites",
       name: "Favourites",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/ExampleView.vue"),
+      component: () => import("@/views/ExampleView.vue"),
     },
   ],
 });

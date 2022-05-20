@@ -1,15 +1,22 @@
-<template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
-</template>
+<script setup lang="ts">
+import { ref } from "vue";
+import { getRandomDadJoke } from "@/services";
+import JokeCard from "@/components/JokeCard.vue";
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+let joke = ref('');
+
+function handleChange() {
+  joke.value = "Cargando...";
+  getRandomDadJoke().then((data) => {
+    joke.value = data.joke;
+  });
 }
-</style>
+</script>
+
+<template>
+  <main>
+    <h1>Random Dad Joke</h1>
+    <button @click="handleChange"><strong>Load Joke</strong></button>
+    <JokeCard :joke="joke" />
+  </main>
+</template>

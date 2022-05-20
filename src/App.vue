@@ -30,7 +30,7 @@ body {
 }
 
 main {
-  margin: 0 11ch;
+  margin: 0 10ch;
   padding: 2rem;
   min-height: calc(100vh - 7rem);
   background-color: white;
@@ -41,8 +41,15 @@ p {
 }
 
 button {
-  border: none;
-  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 9999px;
+  padding: 0.75em 1.5em;
+  border: 1px solid black;
   background-color: aquamarine;
+  transition: background-color 100ms linear;
+}
+
+button:active {
+  background-color: deepskyblue;
 }
 </style>
