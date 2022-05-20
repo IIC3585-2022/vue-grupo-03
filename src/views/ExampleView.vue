@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import JokeCard from '../components/JokeCard.vue';
+import { ref } from "vue";
+import JokeCard from "../components/JokeCard.vue";
 
 const joke = ref(
-  'My dog used to chase people on a bike a lot. I had to take his bike away.'
+  "My dog used to chase people on a bike a lot. I had to take his bike away."
 );
 </script>
 
