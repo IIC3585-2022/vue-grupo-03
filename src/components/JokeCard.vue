@@ -7,7 +7,7 @@ defineProps({
 <template>
   <div class="joke-card">
     <p>
-      <strong>{{ joke || 'Aquí va el chiste' }}</strong>
+      <strong>{{ joke || "Aquí va el chiste" }}</strong>
     </p>
   </div>
 </template>
