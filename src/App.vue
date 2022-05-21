@@ -58,14 +58,23 @@ p {
 button {
   color: white;
   cursor: pointer;
-  border-radius: 9999px;
+  font-weight: bold;
+  border-radius: 0.5rem;
   padding: 0.75em 1.5em;
-  border: 1px solid black;
+  border: none;
   background-color: var(--accent);
   transition: background-color 100ms linear;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
-  background-color: deepskyblue;
+  background-color: var(--dark-accent);
+  box-shadow: none;
+}
+
+.actions {
+  gap: 2rem;
+  display: flex;
+  width: fit-content;
 }
 </style>

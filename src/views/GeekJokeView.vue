@@ -29,7 +29,7 @@ export default defineComponent({
 <template>
   <main>
     <h1>Random Geek Joke</h1>
-    <button @click="handleChange"><strong>Load Joke</strong></button>
+    <button @click="handleChange">Load Joke</button>
     <JokeCard :joke="joke" />
   </main>
 </template>

@@ -1,5 +1,6 @@
 :root {
-  --accent: darkviolet;
+  --accent: slateblue;
+  --dark-accent: #5a4abd;
   --secondary: gold;
   --selection: aquamarine;
 }

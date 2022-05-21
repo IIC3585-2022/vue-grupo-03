@@ -33,9 +33,10 @@ import { RouterLink } from "vue-router";
 
 a {
   height: 100%;
-  display: flex;
   flex-grow: 1;
+  display: flex;
   color: white;
+  max-width: 15ch;
   font-weight: bold;
   padding: 0 0.125rem;
   align-items: center;
