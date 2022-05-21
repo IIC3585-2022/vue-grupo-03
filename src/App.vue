@@ -56,11 +56,12 @@ p {
 }
 
 button {
+  color: white;
   cursor: pointer;
   border-radius: 9999px;
   padding: 0.75em 1.5em;
   border: 1px solid black;
-  background-color: aquamarine;
+  background-color: var(--accent);
   transition: background-color 100ms linear;
 }
 
