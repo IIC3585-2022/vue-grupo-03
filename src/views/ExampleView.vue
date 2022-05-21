@@ -16,7 +16,7 @@ const joke = ref(
       corrupti illo eaque nam. Ducimus, perferendis? Laborum fugit possimus
       repudiandae illo vero.
     </p>
-    <JokeCard :joke="joke" :type="'dad'" />
+    <JokeCard :joke="joke" />
   </main>
 </template>
 
@@ -30,11 +30,5 @@ main {
 
 p {
   max-width: 45ch;
-}
-
-button {
-  border: none;
-  padding: 0.5em 1em;
-  background-color: aquamarine;
 }
 </style>

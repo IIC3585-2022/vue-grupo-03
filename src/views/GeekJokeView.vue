@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-import geekJoke from "../services/geekJoke";
+import geekJoke from "@/services/geekJoke";
 import JokeCard from "@/components/JokeCard.vue";
 
 export default defineComponent({
@@ -30,26 +30,24 @@ export default defineComponent({
   <main>
     <h1>Random Geek Joke</h1>
     <button @click="handleChange"><strong>Load Joke</strong></button>
-    <JokeCard :joke="joke" :type="'geek'" />
+    <JokeCard :joke="joke" />
   </main>
 </template>
 
 <style>
+/* Hay un comportamiento bien raro con esto */
+/* Tal vez valga la pena para comentarlo en la presentación */
+/*
 main {
-  margin: 0 11ch;
+  margin: 0 40ch;
   padding: 2rem;
   min-height: calc(100vh - 7rem);
   background-color: white;
 }
+*/
 
 p {
   max-width: 45ch;
-}
-
-button {
-  border: none;
-  padding: 0.5em 1em;
-  background-color: aquamarine;
 }
 
 @media (min-width: 1024px) {
