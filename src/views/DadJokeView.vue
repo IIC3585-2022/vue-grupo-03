@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { getRandomDadJoke } from "@/services";
-import JokeCard from "@/components/JokeCard.vue";
 
-let joke = ref('');
+import JokeCard from "@/components/JokeCard.vue";
+import AddFavouriteButton from "@/components/AddFavouriteButton.vue";
+
+const joke = ref('');
 
 function handleChange() {
-  joke.value = "Cargando...";
+  joke.value = "Loading...";
   getRandomDadJoke().then((data) => {
     joke.value = data.joke;
   });
@@ -16,7 +18,10 @@ function handleChange() {
 <template>
   <main>
     <h1>Random Dad Joke</h1>
-    <button @click="handleChange"><strong>Load Joke</strong></button>
+    <div class="actions">
+      <button @click="handleChange">Load Joke</button>
+      <AddFavouriteButton />
+    </div>
     <JokeCard :joke="joke" />
   </main>
 </template>
