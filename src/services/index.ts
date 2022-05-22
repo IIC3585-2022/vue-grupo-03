@@ -10,3 +10,14 @@ export async function getRandomDadJoke() {
     console.error(error);
   }
 }
+
+export async function getRandomFO() {
+  try {
+    const { data } = await axios.get(
+      `https://www.foaas.com/operations`
+    );
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}

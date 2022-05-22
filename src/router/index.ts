@@ -20,7 +20,7 @@ const router = createRouter({
     {
       path: "/foaas",
       name: "F-Off",
-      component: () => import("@/views/ExampleView.vue"),
+      component: () => import("@/views/FOAASView.vue"),
     },
     {
       path: "/geek-jks",
