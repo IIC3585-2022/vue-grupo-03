@@ -42,6 +42,7 @@ p {
 
 button {
   cursor: pointer;
+  font-weight: bold;
   border-radius: 9999px;
   padding: 0.75em 1.5em;
   border: 1px solid black;
@@ -51,5 +52,11 @@ button {
 
 button:active {
   background-color: deepskyblue;
+}
+
+.actions {
+  gap: 2rem;
+  display: flex;
+  width: fit-content;
 }
 </style>
