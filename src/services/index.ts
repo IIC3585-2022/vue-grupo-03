@@ -15,8 +15,14 @@ export async function getRandomFO() {
   try {
     const { data } = await axios.get(
       `https://www.foaas.com/operations`
-    );
-    return data;
+    )
+    const operation = data[Math.floor(Math.random() * data.length)];
+    const foaas = await axios.get(
+      `https://www.foaas.com${operation.url}`
+    )
+    console.log(operation)
+    console.log(foaas);
+    return { foaas: foaas, operation: operation };
   } catch (error) {
     console.error(error);
   }

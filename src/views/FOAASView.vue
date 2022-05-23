@@ -1,29 +1,44 @@
-<script setup lang="ts">
-import { ref } from "vue";
+<script lang="ts">
+import { defineComponent } from "vue";
 import { getRandomFO } from "@/services";
-import JokeCard from "@/components/JokeCard.vue";
+import FOAASCard from "@/components/FOAASCard.vue";
 import AddFavouriteButton from "@/components/AddFavouriteButton.vue";
 
-let foaas = ref('');
-
-function handleOperationsReq() {
-  foaas.value = "Cargando...";
-  getRandomFO().then((data) => {
-    foaas.operation = data[Math.floor(Math.random() * data.length)];
-    console.log(foaas.operation);
-  });
-}
-handleOperationsReq()
+export default defineComponent({
+  data() {
+    return {
+      fields: [],
+      fo: "",
+    };
+  },
+  components: {
+    FOAASCard,
+  },
+  methods: {
+    handleOperationsReq() {
+      this.fo = "Cargando..."
+      getRandomFO().then(( responses ) => {
+        if (responses) {
+          this.fo = responses.foaas.data.message;
+          this.fields = responses.operation.fields;
+        }
+      }).catch((err) => {
+          console.log(err);
+      });
+    }
+  },
+});
 </script>
 
 <template>
   <main>
     <h1>F-Off Generator</h1>
     <div class="actions">
-      <button @click="handleChange">Load F-Off</button>
+      <button @click="handleOperationsReq">Load F-Off</button>
       <AddFavouriteButton />
+
     </div>
-    <JokeCard :joke="foaas" />
+    <FOAASCard :fo="fo" />
   </main>
 </template>
 
