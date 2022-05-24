@@ -19,7 +19,10 @@ export async function getRandomFO() {
     const operation = data[Math.floor(Math.random() * data.length)];
     const foaas = await axios.get(
       `https://www.foaas.com${operation.url}`
-    )
+    );
+    [...operation.fields.keys()].forEach(key => {
+      operation.fields[key].text = ":" + operation.fields[key].field
+    });
     console.log(operation)
     console.log(foaas);
     return { foaas: foaas, operation: operation };
