@@ -11,7 +11,7 @@ import NavBar from "./components/NavBar.vue";
 </template>
 
 <style>
-@import 'assets/base.css';
+@import "assets/base.css";
 
 ::selection {
   background-color: var(--selection);

@@ -11,7 +11,6 @@ module.exports = {
   ],
   env: {
     "vue/setup-compiler-macros": true,
-    "prettier/prettier": ["warn", { "singleQuote": false }]
   },
   overrides: [
     {
