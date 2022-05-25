@@ -32,10 +32,12 @@ import { RouterLink } from "vue-router";
 }
 
 a {
-  width: 11ch;
   height: 100%;
+  flex-grow: 1;
   display: flex;
   color: white;
+  max-width: 15ch;
+  font-weight: bold;
   padding: 0 0.125rem;
   align-items: center;
   text-decoration: none;
@@ -43,7 +45,7 @@ a {
 }
 
 a:hover {
-  color: black;
-  background-color: aquamarine;
+  text-decoration: none;
+  background-color: var(--accent);
 }
 </style>

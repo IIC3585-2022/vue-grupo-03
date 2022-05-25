@@ -11,6 +11,12 @@ import NavBar from "./components/NavBar.vue";
 </template>
 
 <style>
+@import "assets/base.css";
+
+::selection {
+  background-color: var(--selection);
+}
+
 * {
   transition: color 250ms ease-out, background-color 250ms ease-out;
 }
@@ -20,7 +26,7 @@ body {
   margin: 0;
   min-height: 100vh;
   max-width: 100vw;
-  background-color: gold;
+  background-color: var(--secondary);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -36,22 +42,34 @@ main {
   background-color: white;
 }
 
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 p {
   max-width: 45ch;
 }
 
 button {
+  color: white;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 9999px;
+  border-radius: 0.5rem;
   padding: 0.75em 1.5em;
-  border: 1px solid black;
-  background-color: aquamarine;
+  border: none;
+  background-color: var(--accent);
   transition: background-color 100ms linear;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
-  background-color: deepskyblue;
+  background-color: var(--dark-accent);
+  box-shadow: none;
 }
 
 .actions {
