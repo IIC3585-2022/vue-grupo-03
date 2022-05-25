@@ -8,7 +8,7 @@
   </h3>
 </template>
 
-<style>
+<style scoped>
 h1 {
   color: var(--accent);
   font-size: 5rem;
