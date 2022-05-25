@@ -22,8 +22,6 @@ const indexedJokes = enumerate(jokeStore.$state.jokes) as str_enumerator;
     <div class="joke-vault">
       <li v-for="[idx, joke] in indexedJokes" :key="idx">
         <JokeCard :joke="joke" />
-        <!-- No funciona bien este boton (borra pero no actualiza el DOM)-->
-        <button @click="jokeStore.delete(joke)">X</button>
       </li>
     </div>
   </main>

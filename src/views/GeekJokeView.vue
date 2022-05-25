@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import geekJoke from "@/services/geekJoke";
 import JokeCard from "@/components/JokeCard.vue";
 import AddFavouriteButton from "@/components/AddFavouriteButton.vue";
