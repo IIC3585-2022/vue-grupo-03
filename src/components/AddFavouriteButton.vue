@@ -12,11 +12,13 @@ defineProps({
 
 <style scoped>
 button {
-  background-color: #fe3;
+  color: gold;
+  background-color: transparent;
+  border: 2px solid gold;
   transition: background-color 100ms linear;
 }
 
 button:active {
-  background-color: goldenrod;
+  background-color: #fcfcfc;
 }
 </style>
