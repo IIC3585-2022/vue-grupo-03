@@ -3,6 +3,10 @@ import { defineComponent, markRaw } from "vue";
 import { getRandomFO } from "@/services";
 import FOAASCard from "@/components/FOAASCard.vue";
 import AddFavouriteButton from "@/components/AddFavouriteButton.vue";
+import { concatIntoStr } from "@/functions/concatenate";
+import { useJokeStore } from "@/stores";
+
+const jokeStore = useJokeStore();
 
 export default defineComponent({
   data() {
@@ -10,10 +14,14 @@ export default defineComponent({
       fo: "",
       fields: [],
       foTextArray: [""],
+      hasFo: false,
+      aviso: "",
+      error: "",
     };
   },
   components: {
     FOAASCard,
+    AddFavouriteButton,
   },
   methods: {
     handleOperationsReq() {
@@ -30,18 +38,28 @@ export default defineComponent({
               }
             })
             regexRep = regexRep.slice(0, -1);
-            regexRep = regexRep + "+"
-            let myRegex = new RegExp(regexRep)
+            regexRep = regexRep + "+";
+            let myRegex = new RegExp(regexRep);
             // console.log(regexRep)
             // console.log(myRegex)
-            this.foTextArray = this.fo.split(myRegex)
+            this.foTextArray = this.fo.split(myRegex);
             // console.log(this.foTextArray);
+            this.error = ""
+            this.hasFo = true;
           }
         }
       }).catch((err) => {
           console.log(err);
       });
-    }
+    },
+    addToFavourites() {
+      if (this.hasFo) {
+        jokeStore.$state.jokes.push(concatIntoStr(this.foTextArray, this.fields));
+        this.aviso = "Joke added to favourites";
+      } else {
+        this.aviso = "No joke to add to favourites";
+      }
+    },
   },
 });
 </script>
@@ -51,12 +69,13 @@ export default defineComponent({
     <h1>F-Off Generator</h1>
     <div class="actions">
       <button @click="handleOperationsReq">Load F-Off</button>
-      <AddFavouriteButton />
+      <AddFavouriteButton @click="addToFavourites" />
     </div>
     <div v-for="field in fields">
       <div class="field-line">{{field.name}}: <input class="field-text-box" v-model="field.text"></div>
     </div>
     <FOAASCard :foTextArray="foTextArray" :fields="fields"/>
+    <p class="aviso">{{ aviso }}</p>
   </main>
 </template>
 
