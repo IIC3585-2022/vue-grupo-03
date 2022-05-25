@@ -19,4 +19,7 @@ module.exports = {
       extends: ["plugin:cypress/recommended"],
     },
   ],
+  rules: {
+    "prettier/prettier": ["warn", { singleQuote: false }],
+  },
 };

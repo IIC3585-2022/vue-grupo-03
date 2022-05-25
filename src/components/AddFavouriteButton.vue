@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { useCounterStore } from '@/stores/counter';
-const store = useCounterStore();
+defineProps({
+  handleClick: Function,
+});
 </script>
 
 <template>
-  <button @click="store.increment()">Añadir a favoritos</button>
+  <button @click="handleClick ? handleClick() : null">
+    Añadir a favoritos
+  </button>
 </template>
 
 <style scoped>
